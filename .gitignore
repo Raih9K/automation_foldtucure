@@ -25,3 +25,4 @@ screenshots/
 
 # Ignore Allure reports (if used for test result reporting)
 allure_report/
+selenium-ide/
