@@ -1,0 +1,14 @@
+selenium
+pytest
+pytest-html
+allure-pytest
+webdriver-manager
+requests
+faker
+pyyaml
+jsonschema
+pytest-xdist
+pytest-assume
+pytest-expect
+pylint
+black

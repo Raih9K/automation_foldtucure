@@ -1,0 +1,57 @@
+# Python bytecode files
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# Virtual environment folders
+env/
+venv/
+.venv/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Pytest and Allure reports
+*.html
+*.xml
+*.json
+allure-report/
+pytest-report/
+
+# WebDriver logs
+selenium-logs/
+
+# Test cache
+.cache/
+
+# Configuration files that might store sensitive info
+*.env
+
+# Editor specific files (e.g., VSCode, PyCharm)
+.vscode/
+.idea/
+
+# Linter and formatter cache files
+*.lint
+*.tox
+*.coverage
+.coverage.*
+nosetests.xml
+*.hypothesis/
+
+# Log files
+*.log
+
+# Requests session files (can be ignored if you're using requests sessions for testing)
+requests/
+
+# YAML files (If you're storing configurations in YAML files)
+*.yaml
+*.yml
+
+# Misc
+*.bak
+*.swp
