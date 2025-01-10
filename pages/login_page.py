@@ -1,6 +1,5 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
-import time
 
 
 class LoginPage:
@@ -26,14 +25,30 @@ class LoginPage:
         login_button.click()
 
     def is_logged_in(self):
-        time.sleep(2)
-        # Check if "Total Marketplace Orders" link is displayed after login
-        page_data = self.driver.page_source  # Get the page source
-        assert "Qbits Admin" in page_data, \
-            "'Qbits Admin' not found. Login might have failed."
+        try:
+            # Check if the 'Customer' element is visible
+            element = self.driver.find_element(By.XPATH, "//h4[.='Customer']")
+            if element.is_displayed():
+                print("Login successful. 'Customer' element found.")
+                return True
+            else:
+                print("Login failed. 'Customer' element not visible.")
+                return False
+        except Exception as e:
+            print(f"Error: {str(e)}. Login might have failed.")
+            return False
 
     def is_login_failed(self):
-        time.sleep(2)
-        # Check if "Log in" link is displayed in case of failed login
-        page_data = self.driver.page_source  # Get the page source
-        assert "Qbits Admin" in page_data, "'Qbits Admin' link not found. Login might have succeeded."
+        try:
+            # Check if the 'Email or Phone' label is visible
+            element = self.driver.find_element(
+                By.XPATH, "//label[.='Email or Phone']")
+            if element.is_displayed():
+                print("Login failed. 'Email or Phone' label visible.")
+                return True
+            else:
+                print("Login successful. 'Email or Phone' label not visible.")
+                return False
+        except Exception as e:
+            print(f"Error: {str(e)}. Could not find 'Email or Phone' label.")
+            return False
