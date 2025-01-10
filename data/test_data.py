@@ -5,6 +5,4 @@ LOGIN_TEST_DATA = {
     "invalid_email": "invalid_email@example.com",
     "invalid_password": "wrongpassword",
     "empty_email": "",
-
-
 }
