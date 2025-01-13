@@ -1,28 +1,28 @@
-# Ignore the virtual environment directory
-venv/
+# # Ignore the virtual environment directory
+# venv/
 
-# Ignore Python bytecode files
-__pycache__/
-*.pyc
-*.pyo
+# # Ignore Python bytecode files
+# __pycache__/
+# *.pyc
+# *.pyo
 
-# Ignore pip's installed packages
-*.egg-info/
-dist/
-build/
+# # Ignore pip's installed packages
+# *.egg-info/
+# dist/
+# build/
 
-# Ignore requirements.txt (optional, but useful if you don't want it in Git)
-# requirements.txt
+# # Ignore requirements.txt (optional, but useful if you don't want it in Git)
+# # requirements.txt
 
-# Ignore test result and log files
-*.log
-*.out
-*.err
+# # Ignore test result and log files
+# *.log
+# *.out
+# *.err
 
-# Ignore generated test reports (if they are in the reports directory)
-reports/
-screenshots/
+# # Ignore generated test reports (if they are in the reports directory)
+# reports/
+# screenshots/
 
-# Ignore Allure reports (if used for test result reporting)
-allure_report/
-selenium-ide/
+# # Ignore Allure reports (if used for test result reporting)
+# allure_report/
+# selenium-ide/
