@@ -52,3 +52,6 @@ class LoginPage:
         except Exception as e:
             print(f"Error: {str(e)}. Could not find 'Email or Phone' label.")
             return False
+
+
+# comments powered by Raihan
