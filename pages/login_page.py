@@ -11,17 +11,18 @@ class LoginPage:
 
     def enter_email(self, email):
         email_field = self.driver.find_element(
-            By.CSS_SELECTOR, "[placeholder='Enter your email or phone number']")
+            By.CSS_SELECTOR, "[placeholder='Enter your email or phone number']"
+        )
         email_field.send_keys(email)
 
     def enter_password(self, password):
         password_field = self.driver.find_element(
-            By.CSS_SELECTOR, "[placeholder='Enter your password']")
+            By.CSS_SELECTOR, "[placeholder='Enter your password']"
+        )
         password_field.send_keys(password)
 
     def click_login_button(self):
-        login_button = self.driver.find_element(
-            By.CSS_SELECTOR, ".bg-blue-700")
+        login_button = self.driver.find_element(By.CSS_SELECTOR, ".bg-blue-700")
         login_button.click()
 
     def is_logged_in(self):
@@ -41,8 +42,7 @@ class LoginPage:
     def is_login_failed(self):
         try:
             # Check if the 'Email or Phone' label is visible
-            element = self.driver.find_element(
-                By.XPATH, "//label[.='Email or Phone']")
+            element = self.driver.find_element(By.XPATH, "//label[.='Email or Phone']")
             if element.is_displayed():
                 print("Login failed. 'Email or Phone' label visible.")
                 return True
