@@ -1,0 +1,14 @@
+# selenium==4.10.0            # Selenium WebDriver for browser automation
+# pytest==7.2.2               # Pytest framework for testing
+# allure-pytest==2.10.0       # Allure plugin for Pytest reporting
+# pytest-selenium==1.0.0      # Integration between Selenium and Pytest
+# pytest-xdist==2.5.0         # For parallel test execution
+# pytest-html==3.1.1          # For HTML test report generation
+# webdriver-manager==3.8.3    # For automatic management of WebDriver binaries
+selenium           # Selenium WebDriver for browser automation
+pytest              # Pytest framework for testing
+allure-pytest      # Allure plugin for Pytest reporting
+pytest-selenium    # Integration between Selenium and Pytest
+pytest-xdist        # For parallel test execution
+pytest-html         # For HTML test report generation
+webdriver-manager   # For automatic management of WebDriver binaries

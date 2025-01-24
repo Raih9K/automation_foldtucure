@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Folder Structure</title>
+    <!-- Add Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        pre {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            font-size: 1.2em;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        code {
+            background-color: #e1e1e1;
+            padding: 2px 5px;
+            border-radius: 5px;
+        }
+
+        h1 {
+            color: #007bff;
+            text-align: center;
+        }
+
+        h2 {
+            color: #343a40;
+        }
+
+        .list-group-item {
+            border: none;
+        }
+
+        .container {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="my-5">Project Folder Structure</h1>
+
+        <pre class="bg-light p-4">
+project_name/
+│
+├── tests/               <!-- Test files -->
+│   └── test_login.py    <!-- Example test file -->
+│
+├── pages/               <!-- Page Object files -->
+│   └── login_page.py    <!-- Login page actions -->
+│
+├── utils/               <!-- Helper functions -->
+│   └── browser_utils.py <!-- Browser-related utilities -->
+│
+├── reports/             <!-- Test result reports -->
+│   └── allure_report/   <!-- Allure report files -->
+│
+├── screenshots/         <!-- Captured screenshots during tests -->
+│   └── login_error.png  <!-- Example screenshot -->
+│
+├── conftest.py          <!-- Shared fixtures for Pytest -->
+│
+├── requirements.txt     <!-- Required Python packages -->
+│
+└── pytest.ini           <!-- Pytest configuration -->
+        </pre>
+
+        <h2>Folder-by-Folder Explanation:</h2>
+        <ul class="list-group">
+            <li class="list-group-item"><strong>tests/</strong> (Test files):
+                <ul>
+                    <li>Ei folder e sob test files thakbe.</li>
+                    <li>Example: <code>test_login.py</code> file jekhane login related tests likha thakbe.</li>
+                </ul>
+            </li>
+
+            <li class="list-group-item"><strong>pages/</strong> (Page Object files):
+                <ul>
+                    <li>Ei folder e Page Object Model (POM) er moto files thakbe.</li>
+                    <li>Page Object Model mane hocche protyek webpage er ekta class banano, jar modhye oi webpage er
+                        actions thakbe.</li>
+                    <li>Example: <code>login_page.py</code> file jekhane login page er actions like login form fill
+                        kora, submit kora, etc. thakbe.</li>
+                </ul>
+            </li>
+
+            <li class="list-group-item"><strong>utils/</strong> (Helper functions):
+                <ul>
+                    <li>Ei folder e utility files thakbe ja test execution e help kore, jemon browser ke handle kora,
+                        setup & teardown actions kora, etc.</li>
+                    <li>Example: <code>browser_utils.py</code> file jekhane browser initialization, cleanup, or window
+                        handling functions thakbe.</li>
+                </ul>
+            </li>
+
+            <li class="list-group-item"><strong>reports/</strong> (Test result reports):
+                <ul>
+                    <li>Ei folder e test run er por je reports generate hobe, shegulo store kora hobe.</li>
+                    <li>Example: <code>allure_report/</code> folder thakbe jekhane Allure report related files store
+                        hobe.</li>
+                </ul>
+            </li>
+
+            <li class="list-group-item"><strong>screenshots/</strong> (Captured screenshots during tests):
+                <ul>
+                    <li>Jodi kono test fail kore, tahole oi time er screenshot capture kora hobe.</li>
+                    <li>Ei folder e screenshots save hobe.</li>
+                    <li>Example: <code>login_error.png</code> jekhane login error er screenshot thakbe.</li>
+                </ul>
+            </li>
+
+            <li class="list-group-item"><strong>conftest.py</strong> (Shared fixtures for Pytest):
+                <ul>
+                    <li>Ei file e Pytest er fixtures thakbe, ja test execution er age common setup korbe.</li>
+                    <li>Fixtures use kore, amra ekbar setup kore onek test e use korte pari, jemon browser launch kora,
+                        database connection setup kora, etc.</li>
+                </ul>
+            </li>
+
+            <li class="list-group-item"><strong>requirements.txt</strong> (Required Python packages):
+                <ul>
+                    <li>Ei file e amader project e je Python libraries dorkar, segulo list thakbe.</li>
+                    <li>Example: <code>selenium</code>, <code>pytest</code>, <code>allure-pytest</code> etc.</li>
+                </ul>
+            </li>
+
+            <li class="list-group-item"><strong>pytest.ini</strong> (Pytest configuration):
+                <ul>
+                    <li>Ei file e Pytest configuration thakbe, jekhane test er behaviour customize kora jay.</li>
+                    <li>Ekhane amra test runs er jonno specific settings provide korte pari, jemon log level, report
+                        format, etc.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>Required Libraries:</h2>
+        <ul class="list-group">
+            <li class="list-group-item"><code>selenium==4.10.0</code> - Selenium WebDriver for browser automation</li>
+            <li class="list-group-item"><code>pytest==7.2.2</code> - Pytest framework for testing</li>
+            <li class="list-group-item"><code>allure-pytest==2.10.0</code> - Allure plugin for Pytest reporting</li>
+            <li class="list-group-item"><code>pytest-selenium==1.0.0</code> - Integration between Selenium and Pytest
+            </li>
+            <li class="list-group-item"><code>pytest-xdist==2.5.0</code> - For parallel test execution</li>
+            <li class="list-group-item"><code>pytest-html==3.1.1</code> - For HTML test report generation</li>
+            <li class="list-group-item"><code>webdriver-manager==3.8.3</code> - For automatic management of WebDriver
+                binaries</li>
+        </ul>
+
+        <!-- <h2>Next Steps:</h2>
+        <ul class="list-group">
+            <li class="list-group-item">1. Set up the project structure as described, creating the necessary directories
+                and files.</li>
+            <li class="list-group-item">2. Install the required Python packages by running
+                <code>pip install -r requirements.txt</code>.</li>
+            <li class="list-group-item">3. Begin writing your tests using Pytest and Selenium, utilizing the Page Object
+                Model (POM) for better organization.</li>
+            <li class="list-group-item">4. Run your tests using the <code>pytest</code> command, and check the generated
+                reports and screenshots for results and debugging information.</li>
+            <li class="list-group-item">5. Optionally, integrate Allure or other reporting tools to create detailed
+                reports after test runs.</li>
+        </ul> -->
+
+        <h2>Next Steps:</h2>
+        <ul class="list-group">
+            <li class="list-group-item">1. Project structure create koro jaise description-e bolechhi, required
+                directories and files banano.</li>
+            <li class="list-group-item">2. Virtual environment (venv) setup koro project-er dependencies alada rakhar
+                jonno. Ei command run koro:</li>
+            <pre class="bg-light p-4">python -m venv venv</pre>
+            <li class="list-group-item">3. Virtual environment activate koro:</li>
+            <ul class="list-group">
+                <li class="list-group-item">Windows-er jonno:</li>
+                <pre class="bg-light p-4">venv\Scripts\activate</pre>
+                <li class="list-group-item">macOS/Linux-er jonno:</li>
+                <pre class="bg-light p-4">source venv/bin/activate</pre>
+            </ul>
+            <li class="list-group-item">4. Required Python packages install koro
+                <code>pip install -r requirements.txt</code> diye.</li>
+            <li class="list-group-item">5. Pytest and Selenium use kore test likha suru koro, ar Page Object Model (POM)
+                use koro better organization-er jonno.</li>
+            <li class="list-group-item">6. Test run koro <code>pytest</code> command diye, ar test result and debugging
+                information-er jonno report and screenshot check koro.</li>
+            <li class="list-group-item">7. Chaole Allure ba onno reporting tools integrate kore detailed report generate
+                koro test run-er por.</li>
+        </ul>
+
+
+        <h2>Conclusion:</h2>
+        <p>Ei structure ta organized r modular.</p>
+        <p><strong>Test files</strong> are separate, <strong>page objects</strong> keep actions isolated for each page,
+            <strong>utilities</strong> provide reusable functions, and <strong>reports/screenshots</strong> keep test
+            results and failure details safe.
+        </p>
+        <p><strong>pytest.ini</strong> and <strong>conftest.py</strong> help make the tests more structured and easier
+            to maintain across larger projects.</p>
+        <p>By following this folder structure and best practices, you ensure your project remains clean, scalable, and
+            easy to maintain. The separation of concerns, reuse of page objects, and use of helper functions make it
+            easier to extend the tests as your project grows.</p>
+        <p>Keep your test suite organized, report test results clearly, and ensure that your automation setup is easily
+            shareable and reproducible across different environments.</p>
+    </div>
+
+    <!-- Add Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

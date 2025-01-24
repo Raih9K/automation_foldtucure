@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Folder Structure</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+        }
+
+        h1 {
+            color: #007bff;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        h2 {
+            color: #343a40;
+            margin-top: 30px;
+        }
+
+        .container {
+            margin-top: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+
+        pre {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            font-size: 1.2em;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            color: #212529;
+        }
+
+        code {
+            background-color: #e1e1e1;
+            padding: 2px 5px;
+            border-radius: 5px;
+        }
+
+        .list-group {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .list-group-item {
+            border: none;
+            padding: 10px 0;
+            margin-bottom: 10px;
+        }
+
+        .list-group-item strong {
+            color: #007bff;
+        }
+
+        .list-group-item ul {
+            margin-left: 20px;
+        }
+
+        .list-group-item li {
+            margin: 5px 0;
+        }
+
+        .list-group-item code {
+            font-size: 1.1em;
+        }
+
+        .bg-light {
+            background-color: #e9ecef !important;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-muted {
+            color: #6c757d;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="my-5">Project Folder Structure</h1>
+
+        <pre class="bg-light p-4">
+project_name/
+│
+├── tests/               <!-- Test files -->
+│   └── test_login.py    <!-- Example test file -->
+│
+├── pages/               <!-- Page Object files -->
+│   └── login_page.py    <!-- Login page actions -->
+│
+├── utils/               <!-- Helper functions -->
+│   └── browser_utils.py <!-- Browser-related utilities -->
+│
+├── reports/             <!-- Test result reports -->
+│   └── allure_report/   <!-- Allure report files -->
+│
+├── screenshots/         <!-- Captured screenshots during tests -->
+│   └── login_error.png  <!-- Example screenshot -->
+│
+├── conftest.py          <!-- Shared fixtures for Pytest -->
+│
+├── requirements.txt     <!-- Required Python packages -->
+│
+└── pytest.ini           <!-- Pytest configuration -->
+        </pre>
+
+        <h2>Folder-by-Folder Explanation:</h2>
+        <ul class="list-group">
+            <li class="list-group-item"><strong>tests/</strong> (Test files):
+                <ul>
+                    <li>This folder contains all the test files for different parts of your web application.</li>
+                    <li>For example, <code>test_login.py</code> contains tests specifically for the login functionality.</li>
+                    <li>Test files should be written using the Pytest framework to allow easy execution and management.</li>
+                </ul>
+            </li>
+
+            <li class="list-group-item"><strong>pages/</strong> (Page Object files):
+                <ul>
+                    <li>This folder follows the Page Object Model (POM) design pattern, which is used to encapsulate the interactions with a page into separate classes.</li>
+                    <li>Each page in the web application (such as login page, product page, etc.) has its corresponding class with actions related to that page.</li>
+                    <li>For instance, <code>login_page.py</code> contains actions for the login page like filling in the username, password, and clicking the login button.</li>
+                    <li>Using POM helps to maintain test cases and improve readability and reusability by isolating the page-specific actions into their own classes.</li>
+                </ul>
+            </li>
+
+            <li class="list-group-item"><strong>utils/</strong> (Helper functions):
+                <ul>
+                    <li>This folder stores utility files that contain reusable helper functions that support the main tests.</li>
+                    <li>For example, <code>browser_utils.py</code> may have functions for setting up and tearing down the browser instance, handling browser windows, or performing other browser-related tasks.</li>
+                    <li>These functions are written to be called by both the tests and page object files, making it easier to manage common operations.</li>
+                </ul>
+            </li>
+
+            <li class="list-group-item"><strong>reports/</strong> (Test result reports):
+                <ul>
+                    <li>Stores all the generated reports after running tests.</li>
+                    <li>For example, <code>allure_report/</code> contains files generated by the Allure framework for creating visual reports of test execution.</li>
+                    <li>These reports provide valuable insights into test results, helping you analyze the success/failure of different tests.</li>
+                </ul>
+            </li>
+
+            <li class="list-group-item"><strong>screenshots/</strong> (Captured screenshots during tests):
+                <ul>
+                    <li>This folder contains screenshots captured during test execution.</li>
+                    <li>If a test fails, it’s useful to capture a screenshot to help diagnose what went wrong.</li>
+                    <li>For example, <code>login_error.png</code> might be a screenshot captured during a failed login test, showing the error message displayed on the login page.</li>
+                </ul>
+            </li>
+
+            <li class="list-group-item"><strong>conftest.py</strong> (Shared fixtures for Pytest):
+                <ul>
+                    <li>This file contains the shared Pytest fixtures that will be available across the tests.</li>
+                    <li>Fixtures in Pytest help in setting up and tearing down the environment before and after each test. For example, you might have a fixture that initializes the WebDriver before each test, and shuts it down afterward.</li>
+                    <li>Fixtures help in writing more concise and reusable tests by centralizing the setup/teardown logic.</li>
+                </ul>
+            </li>
+
+            <li class="list-group-item"><strong>requirements.txt</strong> (Required Python packages):
+                <ul>
+                    <li>This file lists all the Python packages required to run the project.</li>
+                    <li>It includes all the necessary dependencies, such as <code>selenium</code>, <code>pytest</code>, and other libraries used in the project.</li>
+                    <li>By using this file, anyone who works on the project can install the necessary dependencies using the <code>pip install -r requirements.txt</code> command.</li>
+                </ul>
+            </li>
+
+            <li class="list-group-item"><strong>pytest.ini</strong> (Pytest configuration):
+                <ul>
+                    <li>This file contains the configuration for Pytest that allows you to customize test behavior.</li>
+                    <li>You can set different options here, such as logging level, report format, etc., to control how tests are run and reported.</li>
+                    <li>This helps make the testing process more consistent and tailored to the needs of your project.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>Overall Purpose:</h2>
+        <p>This folder structure is designed to keep the project organized and scalable for future growth.</p>
+        <p><strong>Test files</strong> are kept separate from other code, <strong>page objects</strong> isolate actions related to each page, and <strong>utilities</strong> contain reusable functions for common operations. <strong>Reports and screenshots</strong> are stored separately to capture valuable test result data and failure information.</p>
+        <p><strong>pytest.ini</strong> and <strong>conftest.py</strong> help centralize configuration and common setup logic, making it easier to maintain and extend the test suite in larger projects.</p>
+
+        <h2>Required Python Packages:</h2>
+        <p>To install the required dependencies for this project, create a <code>requirements.txt</code> file and add the following libraries:</p>
+        <pre class="bg-light p-4">
+selenium==4.10.0              # Selenium WebDriver for browser automation
+pytest==7.2.2                 # Pytest framework for testing
+allure-pytest==2.10.0         # Allure plugin for Pytest reporting
+pytest-selenium==1.0.0        # Integration between Selenium and Pytest
+pytest-xdist==2.5.0           # For parallel test execution
+pytest-html==3.1.1            # For HTML test report generation
+webdriver-manager==3.8.3      # For automatic management of WebDriver binaries
+        </pre>
+        <p>To install all dependencies in one go, run the following command:</p>
+        <pre class="bg-light p-4">pip install -r requirements.txt</pre>
+
+        <h2>Additional Dependencies (Optional):</h2>
+        <ul class="list-group">
+            <li class="list-group-item"><code>requests==2.28.1</code> - For handling HTTP requests if API testing is required.</li>
+            <li class="list-group-item"><code>pytest-django==4.5.2</code> - For Django-based test cases (if using Django).</li>
+            
+            <li class="list-group-item"><code>pytest-cov==3.0.0</code> - For generating test coverage reports.</li>
+        </ul>
+
+        <p>These optional dependencies enhance your testing capabilities, enabling additional functionality such as API testing or code coverage reports. You can add them to your <code>requirements.txt</code> file if necessary.</p>
+        <h2>Next Steps:</h2>
+        <ul class="list-group">
+            <li class="list-group-item">1. Set up the project structure as described, creating the necessary directories and files.</li>
+            <li class="list-group-item">2. Set up a virtual environment (venv) to isolate your project dependencies. Run the following command:</li>
+            <pre class="bg-light p-4">python -m venv venv</pre>
+            <li class="list-group-item">3. Activate the virtual environment:</li>
+            <ul class="list-group">
+                <li class="list-group-item">For Windows:</li>
+                <pre class="bg-light p-4">venv\Scripts\activate</pre>
+                <li class="list-group-item">For macOS/Linux:</li>
+                <pre class="bg-light p-4">source venv/bin/activate</pre>
+            </ul>
+            <li class="list-group-item">4. Install the required Python packages by running <code>pip install -r requirements.txt</code>.</li>
+            <li class="list-group-item">5. Begin writing your tests using Pytest and Selenium, utilizing the Page Object Model (POM) for better organization.</li>
+            <li class="list-group-item">6. Run your tests using the <code>pytest</code> command, and check the generated reports and screenshots for results and debugging information.</li>
+            <li class="list-group-item">7. Optionally, integrate Allure or other reporting tools to create detailed reports after test runs.</li>
+        </ul>
+        
+        <!-- <h2>Next Steps:</h2>
+        <ul class="list-group">
+            <li class="list-group-item">1. Set up the project structure as described, creating the necessary directories and files.</li>
+            <li class="list-group-item">2. Install the required Python packages by running <code>pip install -r requirements.txt</code>.</li>
+            <li class="list-group-item">3. Begin writing your tests using Pytest and Selenium, utilizing the Page Object Model (POM) for better organization.</li>
+            <li class="list-group-item">4. Run your tests using the <code>pytest</code> command, and check the generated reports and screenshots for results and debugging information.</li>
+            <li class="list-group-item">5. Optionally, integrate Allure or other reporting tools to create detailed reports after test runs.</li>
+        </ul> -->
+
+        <h2>Conclusion:</h2>
+        <p>By following this folder structure and best practices, you ensure your project remains clean, scalable, and easy to maintain. The separation of concerns, reuse of page objects, and use of helper functions make it easier to extend the tests as your project grows.</p>
+        <p>Keep your test suite organized, report test results clearly, and ensure that your automation setup is easily shareable and reproducible across different environments.</p>
+    </div>
+</body>
+
+</html>
